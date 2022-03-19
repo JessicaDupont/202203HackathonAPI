@@ -18,6 +18,11 @@ namespace _2022Hackathon.DA.Repositories
             throw new NotImplementedException();
         }
 
+        public ILieu Read(int Id)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<ILieu> Search()
         {
             throw new NotImplementedException();

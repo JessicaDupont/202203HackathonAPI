@@ -17,13 +17,9 @@ namespace _2022HackathonAroundTheWal.Controllers
             this.lieuxRepo = lieux;
         }
 
-        // GET: SitesTouristiquesController
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
+ 
 
-        // GET: SitesTouristiquesController/Liste
+         //GET: SitesTouristiquesController/Liste
         [HttpGet("Liste")]
         public ActionResult<IEnumerable<ILieu>> Get()
         {
@@ -42,16 +38,40 @@ namespace _2022HackathonAroundTheWal.Controllers
             }
         }
 
-        //// GET: SitesTouristiquesController/Details/5
-        //public ActionResult Details(int id)
-        //{
-        //    return View();
-        //}
+        // GET: SitesTouristiquesController/Details/5
+        public ActionResult Details(int id)
+        {
+            try
+            {
+                return Ok(lieuxRepo.Read(id));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new
+                    {
+                        Method = "Get",
+                        Message = ex.Message
+                    });
+            }
+        }
 
-        ////GET: SitesTouristiquesController/Details/Balade
-        //public ActionResult Search(string critere)
-        //{
-        //    return View();
-        //}
+        //GET: SitesTouristiquesController/Details/Balade
+        public ActionResult Search(string critere)
+        {
+            try
+            {
+                return Ok(lieuxRepo.Search());
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new
+                    {
+                        Method = "Get",
+                        Message = ex.Message
+                    });
+            }
+        }
     }
 }
