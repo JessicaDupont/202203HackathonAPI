@@ -1,20 +1,24 @@
-﻿using System;
+﻿using _2022Hackathon.DA.Tables.Bases;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace _2022Hackathon.DA.Tables
 {
-    public class TLieu
+    public class TLieu : ITable
     {
-        public string NomTable => "";
-        public string Nom => "";
-        public string ImageUrl => "";
-        public string Description => "";
-        public string GeoLat => "";
-        public string GeoLong => "";
-        public string Adresse => "";
-        public string CodePostal => "";
-        public string Localite => "";
-        public string SiteUrl => "";
+
+        public string IdActivite => "IdActivite";
+        public string Nom => "Nom";
+        public string ImageUrl => "Image";
+        public string Description => "Description";
+        public string GeoLat => "Lat";
+        public string GeoLong => "Long";
+        public string Adresse => "Adresse";
+        public string CodePostal => "CodePostal";
+        public string Localite => "Ville";
+        public string SiteUrl => "Url";
+
+        string ITable.NomTable { get => "Activite"; }
     }
 }
