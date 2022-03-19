@@ -5,9 +5,5 @@
     <RootNamespace>_2022HackathonAroundTheWal</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
-
 
 </Project>
