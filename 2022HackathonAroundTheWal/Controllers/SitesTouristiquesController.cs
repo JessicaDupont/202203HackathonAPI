@@ -17,11 +17,6 @@ namespace _2022HackathonAroundTheWal.Controllers
             this.lieuxRepo = lieux;
         }
 
-        // GET: SitesTouristiquesController
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
 
         // GET: SitesTouristiquesController/Liste
         [HttpGet("Liste")]

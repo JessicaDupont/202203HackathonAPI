@@ -8,7 +8,7 @@ namespace _2022Hackathon.DA.Repositories.Bases
     public interface ILieuxRepository
     {
         public IEnumerable<ILieu> Read();
-        //public ILieu Read();
+        public ILieu Read(int id);
         public IEnumerable<ILieu> Search();
     }
 }
