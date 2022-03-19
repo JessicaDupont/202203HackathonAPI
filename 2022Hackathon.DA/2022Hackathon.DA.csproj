@@ -1,14 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>_2022HackathonAroundTheWal</RootNamespace>
+    <RootNamespace>_2022Hackathon.DA</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\2022Hackathon.DA\2022Hackathon.DA.csproj" />
     <ProjectReference Include="..\2022HackatonAroundTheWal\2022HackatonAroundTheWal.csproj" />
   </ItemGroup>
-
 
 </Project>
