@@ -37,6 +37,7 @@ namespace _2022HackathonAroundTheWal.Controllers
         }
 
         // GET: SitesTouristiquesController/Details/5
+        [HttpGet("Details/{id}")]
         public ActionResult Details(int id)
         {
             try
@@ -54,7 +55,8 @@ namespace _2022HackathonAroundTheWal.Controllers
             }
         }
 
-        //GET: SitesTouristiquesController/Details/Balade
+        //GET: SitesTouristiquesController/Search/filtre=balade
+        [HttpGet("Search/{id}")]
         public ActionResult Search(string critere)
         {
             try
