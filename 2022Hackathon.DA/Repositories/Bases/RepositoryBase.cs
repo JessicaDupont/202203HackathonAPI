@@ -11,11 +11,12 @@ namespace _2022Hackathon.DA.Repositories.Bases
 {
     public abstract class RepositoryBase
     {
-        private readonly string sourceDB = "Data Source=FORMAVDI1307\\TFTIC;" +
-            "Initial Catalog=Les100SEL;" +
-            "Integrated Security=True;" +
-            "Connect Timeout=60;" +
-            "Encrypt=False;" +
+        private readonly string sourceDB = "Data Source=db-aroundthewal.database.windows.net;" +
+            "Initial Catalog=AroundTheWal;" +
+            "User ID=technof;" +
+            "Password=FuturTechno$001;" +
+            "Connect Timeout=30;" +
+            "Encrypt=True;" +
             "TrustServerCertificate=False;" +
             "ApplicationIntent=ReadWrite;" +
             "MultiSubnetFailover=False";

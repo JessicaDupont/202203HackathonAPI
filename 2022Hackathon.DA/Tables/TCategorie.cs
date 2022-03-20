@@ -9,7 +9,6 @@ namespace _2022Hackathon.DA.Tables
     {
         public string IdCategorie = "IdCategorie";
         public string Label => "CategorieLabel";
-
-        string ITable.NomTable { get => "Categorie"; }
+        public string NomTable => "Categorie";
     }
 }

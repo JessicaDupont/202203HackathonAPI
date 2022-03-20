@@ -17,12 +17,6 @@ namespace _2022HackathonAroundTheWal.Controllers
             this.lieuxRepo = lieux;
         }
 
- 
-
-         //GET: SitesTouristiquesController/Liste
-        //    return View();
-        //}
-
         // GET: SitesTouristiquesController/Liste
         [HttpGet("Liste")]
         public ActionResult<IEnumerable<ILieu>> Get()
@@ -56,6 +50,10 @@ namespace _2022HackathonAroundTheWal.Controllers
                     {
                         Method = "Get",
                         Message = ex.Message
+                    });
+            }
+        }
+
         //GET: SitesTouristiquesController/Details/Balade
         public ActionResult Search(string critere)
         {
@@ -69,10 +67,6 @@ namespace _2022HackathonAroundTheWal.Controllers
                     new
                     {
                         Method = "Get",
-                        Message = ex.Message
-                    });
-            }
-        }
                         Message = ex.Message
                     });
             }

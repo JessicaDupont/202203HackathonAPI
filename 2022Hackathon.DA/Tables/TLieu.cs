@@ -8,7 +8,7 @@ namespace _2022Hackathon.DA.Tables
     public class TLieu : ITable
     {
 
-        public string IdActivite => "IdActivite";
+        public string IdActivite => "Id_Activite";
         public string Nom => "Nom";
         public string ImageUrl => "Image";
         public string Description => "Description";
@@ -19,6 +19,6 @@ namespace _2022Hackathon.DA.Tables
         public string Localite => "Ville";
         public string SiteUrl => "Url";
 
-        string ITable.NomTable { get => "Activite"; }
+        public string NomTable => "Activite";
     }
 }

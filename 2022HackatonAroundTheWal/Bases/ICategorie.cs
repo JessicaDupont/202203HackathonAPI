@@ -2,5 +2,6 @@
 {
     public interface ICategorie
     {
+        string Label { get; set; }
     }
 }

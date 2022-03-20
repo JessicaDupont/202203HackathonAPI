@@ -6,8 +6,7 @@ namespace _2022Hackathon.DA.Tables.Bases
 {
     public interface ITable
     {
-
-        public string NomTable { get; }
+        string NomTable { get; }
     }
 
 }

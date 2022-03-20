@@ -11,6 +11,6 @@ namespace _2022Hackathon.DA.Tables
         public string IdActivite => "IdActivite";
         public string IdCategorie => "IdCategorie";
 
-        string ITable.NomTable => "ACT_CAT";
+        public string NomTable => "ACT_CAT";
     }
 }
