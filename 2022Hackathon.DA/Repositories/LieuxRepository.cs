@@ -13,11 +13,13 @@ namespace _2022Hackathon.DA.Repositories
     public class LieuxRepository : RepositoryBase, ILieuxRepository
     {
         private readonly TLieu table;
+        private readonly TActCat table_join;
         private readonly MLieu map;
 
         public LieuxRepository() : base()
         {
             table = new TLieu();
+            table_join = new TActCat();
             map = new MLieu(table);
         }
 
@@ -29,18 +31,23 @@ namespace _2022Hackathon.DA.Repositories
             return result;
         }
 
-        public ILieu Read(int id)
+        public ILieu Read(ICategorieRepository cat, int id)
         {
             string requete = "select * from " + table.NomTable + " where "+table.IdActivite+" = "+ id;
             Command cmd = new Command(requete, false);
-            IEnumerable<ILieu> result = connect.ExecuteReader(cmd, reader => map.Mapping(reader));
-            return result.First();
+            ILieu result = connect.ExecuteReader(cmd, reader => map.Mapping(reader)).First();
+            result.Categories = cat.Search(result);
+            return result;
         }
 
-        //TODO lieu repo search
-        public IEnumerable<ILieu> Search()
+        public IEnumerable<ILieu> Search(int categorie)
         {
-            throw new NotImplementedException();
+            string requete = "select * from " + table.NomTable + " t " +
+                "join " +table_join.NomTable+" j on j."+table_join.IdActivite+" = t."+table.IdActivite+" "+
+                "where j."+table_join.IdCategorie+" = "+categorie;
+            Command cmd = new Command(requete, false);
+            IEnumerable<ILieu> result = connect.ExecuteReader(cmd, reader => map.Mapping(reader));
+            return result;
         }
     }
 }

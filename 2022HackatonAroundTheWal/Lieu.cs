@@ -21,6 +21,6 @@ namespace _2022HackatonAroundTheWal
         public string Localite { get; set; }
         public string SiteUrl { get; set; }
         public IEnumerable<ICategorie> Categories { get; set; }
-        public int IdLieu { get; }
+        public int IdLieu { get; set; }
     }
 }

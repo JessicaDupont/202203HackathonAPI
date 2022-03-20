@@ -6,6 +6,7 @@ namespace _2022HackatonAroundTheWal.Bases
 {
     public interface ILieu
     {
+        int IdLieu { get; set; }
         string Nom { get; set; }
         string ImageUrl { get; set; }
         string Description { get; set; }

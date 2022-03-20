@@ -7,10 +7,9 @@ namespace _2022Hackathon.DA.Tables
 {
     public class TActCat : ITable
     {
-        public string IdActCat => "IdActCat";
-        public string IdActivite => "IdActivite";
-        public string IdCategorie => "IdCategorie";
+        public string IdActivite => "Id_Act";
+        public string IdCategorie => "Id_Cat";
 
-        public string NomTable => "ACT_CAT";
+        public string NomTable => "Lien_Act_Cat";
     }
 }

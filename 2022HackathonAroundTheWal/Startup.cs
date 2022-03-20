@@ -29,6 +29,7 @@ namespace _2022HackathonAroundTheWal
         {
             services.AddControllers();
             services.AddScoped<ILieuxRepository, LieuxRepository>();
+            services.AddScoped<ICategorieRepository, CategorieRepository>();
 
             services.AddSwaggerGen(c =>
             {

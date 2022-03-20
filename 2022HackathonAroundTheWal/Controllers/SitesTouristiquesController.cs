@@ -12,9 +12,12 @@ namespace _2022HackathonAroundTheWal.Controllers
     public class SitesTouristiquesController : ControllerBase
     {
         private readonly ILieuxRepository lieuxRepo;
-        public SitesTouristiquesController(ILieuxRepository lieux) 
+        private readonly ICategorieRepository catRepo;
+
+        public SitesTouristiquesController(ILieuxRepository lieux, ICategorieRepository cat) 
         {
             this.lieuxRepo = lieux;
+            this.catRepo = cat;
         }
 
         // GET: SitesTouristiquesController/Liste
@@ -42,7 +45,7 @@ namespace _2022HackathonAroundTheWal.Controllers
         {
             try
             {
-                return Ok(lieuxRepo.Read(id));
+                return Ok(lieuxRepo.Read(catRepo, id));
             }
             catch (Exception ex)
             {
@@ -55,13 +58,13 @@ namespace _2022HackathonAroundTheWal.Controllers
             }
         }
 
-        //GET: SitesTouristiquesController/Search/filtre=balade
+        //GET: SitesTouristiquesController/Search/1
         [HttpGet("Search/{id}")]
-        public ActionResult Search(string critere)
+        public ActionResult Search(int id)
         {
             try
             {
-                return Ok(lieuxRepo.Search());
+                return Ok(lieuxRepo.Search(id));
             }
             catch (Exception ex)
             {
