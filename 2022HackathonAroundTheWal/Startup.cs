@@ -35,6 +35,13 @@ namespace _2022HackathonAroundTheWal
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AroundTheWal.API", Version = "v1" });
             });
+
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +54,8 @@ namespace _2022HackathonAroundTheWal
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AroundTheWal.API v1"));
             }
 
+            app.UseCors("MyPolicy");
+
             app.UseRouting();
 
             app.UseAuthorization();
@@ -55,6 +64,8 @@ namespace _2022HackathonAroundTheWal
             {
                 endpoints.MapControllers();
             });
+
+
         }
     }
 }
